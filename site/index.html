@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PharmaPulse: an AI analytics copilot for pharma brand teams</title>
+<meta name="description" content="PharmaPulse answers a pharma brand team&#x27;s questions on share, forecasts, persistence and HCP targeting, with an LLM agent that cites every figure.">
+<link rel="canonical" href="https://faizanreza-cs.github.io/PharmaPulse/">
+<meta name="author" content="Faizan Reza">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PharmaPulse">
+<meta property="og:title" content="PharmaPulse: an AI analytics copilot for pharma brand teams">
+<meta property="og:description" content="PharmaPulse answers a pharma brand team&#x27;s questions on share, forecasts, persistence and HCP targeting, with an LLM agent that cites every figure.">
+<meta property="og:url" content="https://faizanreza-cs.github.io/PharmaPulse/">
+<meta property="og:image" content="https://faizanreza-cs.github.io/PharmaPulse/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PharmaPulse: Are we gaining share?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@cs_faizan">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/touch-icon.png">
+<link rel="preload" href="assets/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/styles.css">
+<style>:root{--a:#B4235A;--a-50:#FCF0F3;--a-100:#F8E2E6;--a-200:#EFC1CA;--a-400:#CF6985;--pop-1:#F59E0B;--pop-2:#6366F1;--a-ink:#B4235A}</style>
+<script>(function(h){if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!location.hash)h.classList.add("loading")})(document.documentElement)</script>
+<script src="assets/app.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "PharmaPulse", "description": "PharmaPulse answers a pharma brand team's questions on share, forecasts, persistence and HCP targeting, with an LLM agent that cites every figure.", "url": "https://faizanreza-cs.github.io/PharmaPulse/", "codeRepository": "https://github.com/faizanreza-cs/PharmaPulse", "programmingLanguage": "Python", "license": "https://opensource.org/licenses/MIT", "author": {"@type": "Person", "name": "Faizan Reza", "url": "https://github.com/faizanreza-cs", "sameAs": ["https://www.linkedin.com/in/faizanreza", "https://x.com/cs_faizan"]}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="loader" aria-hidden="true">
+  <img src="assets/mark.svg" alt="" width="56" height="56">
+  <div class="loader-num">0</div>
+  <div class="loader-bar"><i></i></div>
+  <p class="label">Getting things ready</p>
+</div>
+
+<header class="nav" id="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><img src="assets/logo.svg" alt="PharmaPulse, back to top" width="132" height="30"></a>
+    <nav aria-label="Sections"><ul class="nav-links"><li><a href="#overview">Overview</a></li><li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#results">Results</a></li><li><a href="#use">Use it</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+    <a class="btn btn-dark" href="https://github.com/faizanreza-cs/PharmaPulse">GitHub <svg class="out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/> <path d="M7 17 17 7"/></svg></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <h1 class="hero-title" id="hero-title"><span class="line">Are we</span> <span class="line">gaining</span> <span class="line"><span class="outline">share?</span></span></h1>
+      <p class="hero-sub">An AI analytics copilot for pharma brand teams.</p>
+      <div class="hero-cta">
+        <a class="btn btn-dark" href="https://github.com/faizanreza-cs/PharmaPulse">View on GitHub <svg class="go" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="btn btn-ghost" href="#results">See the results</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><span class="label">Scroll</span><span class="bar"></span></div>
+    <div class="hero-year"><p class="label">2026</p><strong>Share. Forecasts. Patients.</strong></div>
+  </section>
+
+  <section class="overview" id="overview" aria-label="Overview">
+    <div class="wrap"><p class="lit"><span class="w">A</span> <span class="w">brand</span> <span class="w">director</span> <span class="w">asks</span> <span class="w">the</span> <span class="w">same</span> <span class="w">questions</span> <span class="w">every</span> <span class="w">quarter.</span> <span class="w">Are</span> <span class="w">we</span> <span class="w">gaining</span> <span class="w">share?</span> <span class="w">What</span> <span class="w">will</span> <span class="w">TRx</span> <span class="w">look</span> <span class="w">like</span> <span class="w">next</span> <span class="w">quarter?</span> <span class="w">Why</span> <span class="w">are</span> <span class="w">patients</span> <span class="w">dropping</span> <span class="w">off?</span> <span class="w">Which</span> <span class="w">prescribers</span> <span class="w">should</span> <span class="w">reps</span> <span class="w">call</span> <span class="w">next?</span> <span class="w">PharmaPulse</span> <span class="w">answers</span> <span class="w">them</span> <span class="w">with</span> <span class="w">tested</span> <span class="w">analytics,</span> <span class="w">and</span> <span class="w">with</span> <span class="w">an</span> <span class="w">LLM</span> <span class="w">agent</span> <span class="w">that</span> <span class="w">calls</span> <span class="w">the</span> <span class="w">same</span> <span class="w">analytics</span> <span class="w">and</span> <span class="w">cites</span> <span class="w">every</span> <span class="w">figure.</span></p></div>
+  </section>
+
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="wrap"><p class="label how-label">How it works</p></div>
+    <div class="pin">
+      <div class="sticky">
+        <div class="steps-track" tabindex="0" role="group" aria-label="How it works, step by step">
+          <article class="step-intro card">
+            <h2 id="how-title">From raw data to a cited answer.</h2>
+            <p>A dashboard, a REST API and an LLM agent, all on the same tested analytics.</p>
+          </article>
+          <article class="step card">
+            <div class="step-tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/> <path d="M3 5V19A9 3 0 0 0 21 19V5"/> <path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
+            <svg class="step-ghost" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/> <path d="M3 5V19A9 3 0 0 0 21 19V5"/> <path d="M3 12A9 3 0 0 0 21 12"/></svg>
+            <svg class="viz" viewBox="0 0 210 210" aria-hidden="true" focusable="false">
+  <rect x="55" y="26" width="100" height="140" rx="16" class="f-white k-line"/>
+  <rect x="73" y="54" width="64" height="9" rx="4.5" class="f-a200"/>
+  <rect x="73" y="76" width="50" height="9" rx="4.5" class="f-line"/>
+  <rect x="73" y="98" width="58" height="9" rx="4.5" class="f-line"/>
+  <rect x="73" y="120" width="40" height="9" rx="4.5" class="f-line"/>
+  <rect class="scan" x="44" y="42" width="122" height="5" rx="2.5" fill-opacity=".9" style="fill:var(--a)"/>
+  <rect class="float" x="30" y="150" width="12" height="12" rx="3" style="fill:var(--pop-2)"/>
+  <circle class="float b" cx="174" cy="44" r="5" style="fill:var(--pop-1)"/>
+</svg>
+            <p class="label">01</p>
+            <h3>Load</h3>
+            <p>Weekly Rx, claims, promotion and payer access</p>
+          </article>
+          <article class="step card">
+            <div class="step-tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v16a2 2 0 0 0 2 2h16"/> <path d="m19 9-5 5-4-4-3 3"/></svg></div>
+            <svg class="step-ghost" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v16a2 2 0 0 0 2 2h16"/> <path d="m19 9-5 5-4-4-3 3"/></svg>
+            <svg class="viz" viewBox="0 0 210 210" aria-hidden="true" focusable="false">
+  <rect class="grow" x="40" y="88" width="24" height="96" rx="12" style="fill:var(--a-200)"/>
+  <rect class="grow" x="76" y="40" width="24" height="144" rx="12" style="fill:var(--a)"/>
+  <rect class="grow" x="112" y="64" width="24" height="120" rx="12" style="fill:var(--pop-1)"/>
+  <rect class="grow" x="148" y="28" width="24" height="156" rx="12" style="fill:var(--pop-2)"/>
+</svg>
+            <p class="label">02</p>
+            <h3>Analyse</h3>
+            <p>Share, forecasts, persistence and targets</p>
+          </article>
+          <article class="step card">
+            <div class="step-tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <svg class="step-ghost" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <svg class="viz" viewBox="0 0 210 210" aria-hidden="true" focusable="false">
+  <circle cx="105" cy="105" r="66" class="k-a200"/>
+  <circle cx="105" cy="105" r="50" class="f-a50"/>
+  <g class="orbit"><circle cx="105" cy="39" r="8" class="f-a"/></g>
+  <g class="orbit b"><circle cx="171" cy="105" r="6.5" class="f-p1"/></g>
+  <g class="orbit c"><circle cx="105" cy="171" r="5.5" class="f-p2"/></g>
+  <circle class="pulse f-a" cx="105" cy="105" r="13"/>
+</svg>
+            <p class="label">03</p>
+            <h3>Expose</h3>
+            <p>Every analysis becomes a tool</p>
+          </article>
+          <article class="step card">
+            <div class="step-tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <svg class="step-ghost" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <svg class="viz" viewBox="0 0 210 210" aria-hidden="true" focusable="false">
+  <rect x="34" y="58" width="104" height="70" rx="14" class="f-white k-line"/>
+  <rect x="50" y="76" width="58" height="9" rx="4.5" class="f-a200"/>
+  <rect x="50" y="96" width="42" height="9" rx="4.5" class="f-line"/>
+  <circle class="ripple" cx="126" cy="112" r="20"/>
+  <g class="bob"><path d="M126 112 L126 172 L141 157 L153 182 L165 176 L153 151 L174 151 Z" class="f-a"/></g>
+  <rect class="float f-p2" x="160" y="44" width="11" height="11" rx="3"/>
+</svg>
+            <p class="label">04</p>
+            <h3>Ask</h3>
+            <p>The agent picks the tools it needs</p>
+          </article>
+          <article class="step card">
+            <div class="step-tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/> <path d="m9 12 2 2 4-4"/></svg></div>
+            <svg class="step-ghost" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/> <path d="m9 12 2 2 4-4"/></svg>
+            <svg class="viz" viewBox="0 0 210 210" aria-hidden="true" focusable="false">
+  <circle class="pulse f-a50" cx="105" cy="105" r="70"/>
+  <circle cx="105" cy="105" r="48" class="f-a"/>
+  <path class="tick" d="M84 106 L99 121 L127 91"/>
+  <rect class="float f-p2" x="166" y="40" width="12" height="12" rx="3"/>
+  <circle class="float b f-p1" cx="40" cy="160" r="6"/>
+</svg>
+            <p class="label">05</p>
+            <h3>Answer</h3>
+            <p>Figures traced to their source</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="sec-title reveal" id="features-title">What a brand team asks for.</h2>
+        <p class="reveal" style="--d:.1s">Each business question has a tested method behind it.</p>
+      </div>
+      <div class="grid3">
+          <article class="feature card reveal" style="--d:0.00s">
+            <div class="tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/> <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg></div>
+            <h3>Share and launch tracking</h3>
+            <p>TRx and NRx share by region and specialty, growth, and a competitor&#x27;s launch curve.</p>
+            <p class="label">01</p>
+          </article>
+          <article class="feature card reveal" style="--d:0.08s">
+            <div class="tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/> <polyline points="16 7 22 7 22 13"/></svg></div>
+            <h3>Demand forecasting</h3>
+            <p>Seasonal naive, Holt-Winters and gradient boosting, picked by 13-week holdout error, with 80% intervals.</p>
+            <p class="label">02</p>
+          </article>
+          <article class="feature card reveal" style="--d:0.16s">
+            <div class="tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/> <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg></div>
+            <h3>Persistence and adherence</h3>
+            <p>Kaplan-Meier time on therapy, PDC over 12 months, and where switchers go.</p>
+            <p class="label">03</p>
+          </article>
+          <article class="feature card reveal" style="--d:0.00s">
+            <div class="tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/> <line x1="22" x2="18" y1="12" y2="12"/> <line x1="6" x2="2" y1="12" y2="12"/> <line x1="12" x2="12" y1="6" y2="2"/> <line x1="12" x2="12" y1="22" y2="18"/></svg></div>
+            <h3>HCP targeting</h3>
+            <p>Volume deciles, value × loyalty segments, behavioural clusters and a next-best-target score.</p>
+            <p class="label">04</p>
+          </article>
+          <article class="feature card reveal" style="--d:0.08s">
+            <div class="tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/> <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+            <h3>Promotional response</h3>
+            <p>Incremental NRx per 100 calls from a panel regression on adstocked calls, with its caveat.</p>
+            <p class="label">05</p>
+          </article>
+          <article class="feature card reveal" style="--d:0.16s">
+            <div class="tile"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/> <path d="m9 12 2 2 4-4"/></svg></div>
+            <h3>Guarded SQL</h3>
+            <p>Model-written queries are parsed: one SELECT, allowed tables, an enforced LIMIT and a 10-second stop.</p>
+            <p class="label">06</p>
+          </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="results" id="results" aria-labelledby="results-title">
+    <div class="wrap">
+      <div class="panel card">
+        <p class="label">Results</p>
+        <h2 id="results-title">Tested on<br>a holdout.</h2>
+        <p class="note">All data is synthetic: a seeded US type 2 diabetes market. No real patients, prescribers or sales figures.</p>
+        <div class="frame">
+            <div class="metric">
+              <div class="metric-top"><span class="label">01</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/> <polyline points="16 7 22 7 22 13"/></svg></div>
+              <b>3.1%</b>
+              <p>mean forecast error (WAPE) of Holt-Winters ETS on a 13-week holdout, across four brands.</p>
+            </div>
+            <div class="metric">
+              <div class="metric-top"><span class="label">02</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 17 2 2 4-4"/> <path d="m3 7 2 2 4-4"/> <path d="M13 6h8"/> <path d="M13 12h8"/> <path d="M13 18h8"/></svg></div>
+              <b>25 / 25</b>
+              <p>golden business questions passed offline, with the right tool and every key figure. It checks the plumbing, not a model.</p>
+            </div>
+            <div class="metric">
+              <div class="metric-top"><span class="label">03</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/> <path d="M8.5 2h7"/> <path d="M7 16h10"/></svg></div>
+              <b>63 tests</b>
+              <p>offline, from hand-checked PDC and persistence fixtures to SQL-guard attacks.</p>
+            </div>
+        </div>
+        <figure class="chart">
+          <img src="assets/overview.png" alt="The PharmaPulse dashboard overview: Glyvance TRx share 38.0%, TRx 96,464 (+2.4% year on year), 12-month persistence 69.3%, adherent 73.5%, and a line chart of TRx share of market by month for four brands, 2023 to 2026." width="2100" height="1500" loading="lazy" decoding="async">
+          <figcaption>The dashboard&#x27;s overview page, on synthetic data.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="band"><div class="wrap band-grid"><div><b>12,000</b><span class="label">Synthetic patients</span></div><div><b>2,000</b><span class="label">Synthetic prescribers</span></div><div><b>3 years</b><span class="label">Of weekly prescriptions</span></div></div></div>
+  </section>
+
+  <section class="uses" id="uses" aria-labelledby="uses-title">
+    <input class="sr-only" type="checkbox" id="pause-uses">
+    <div class="wrap uses-head">
+      <div>
+        <h2 class="sec-title reveal" id="uses-title">For the questions<br>brand teams ask.</h2>
+        <p class="uses-intro reveal" style="--d:.1s">The questions asked every quarter, and the one nobody planned for.</p>
+      </div>
+      <label class="pause" for="pause-uses"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="14" y="4" width="4" height="16" rx="1"/> <rect x="6" y="4" width="4" height="16" rx="1"/></svg> Pause</label>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="set">
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/> <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg>
+              <h3>Are we gaining share?</h3>
+              <p>Share of market by region and specialty, with growth.</p>
+              <p class="for">For brand directors</p>
+              <p class="label">01</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/> <polyline points="16 7 22 7 22 13"/></svg>
+              <h3>What will next quarter look like?</h3>
+              <p>A 13-week forecast with 80% intervals.</p>
+              <p class="for">For forecasting teams</p>
+              <p class="label">02</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/> <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+              <h3>Why are patients dropping off?</h3>
+              <p>Time on therapy, adherence and switching.</p>
+              <p class="for">For patient analytics</p>
+              <p class="label">03</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/> <line x1="22" x2="18" y1="12" y2="12"/> <line x1="6" x2="2" y1="12" y2="12"/> <line x1="12" x2="12" y1="6" y2="2"/> <line x1="12" x2="12" y1="22" y2="18"/></svg>
+              <h3>Who should reps call next?</h3>
+              <p>Deciles, segments and headroom, prescriber by prescriber.</p>
+              <p class="for">For sales operations</p>
+              <p class="label">04</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/> <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+              <h3>Is the field force paying off?</h3>
+              <p>Incremental NRx per 100 calls, with its caveat.</p>
+              <p class="for">For commercial effectiveness</p>
+              <p class="label">05</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <h3>One more question?</h3>
+              <p>Ask the agent: every figure comes from a tool.</p>
+              <p class="for">For the whole brand team</p>
+              <p class="label">06</p>
+            </article>
+        </div>
+        <div class="set dup" aria-hidden="true">
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/> <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg>
+              <h3>Are we gaining share?</h3>
+              <p>Share of market by region and specialty, with growth.</p>
+              <p class="for">For brand directors</p>
+              <p class="label">01</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/> <polyline points="16 7 22 7 22 13"/></svg>
+              <h3>What will next quarter look like?</h3>
+              <p>A 13-week forecast with 80% intervals.</p>
+              <p class="for">For forecasting teams</p>
+              <p class="label">02</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/> <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+              <h3>Why are patients dropping off?</h3>
+              <p>Time on therapy, adherence and switching.</p>
+              <p class="for">For patient analytics</p>
+              <p class="label">03</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/> <line x1="22" x2="18" y1="12" y2="12"/> <line x1="6" x2="2" y1="12" y2="12"/> <line x1="12" x2="12" y1="6" y2="2"/> <line x1="12" x2="12" y1="22" y2="18"/></svg>
+              <h3>Who should reps call next?</h3>
+              <p>Deciles, segments and headroom, prescriber by prescriber.</p>
+              <p class="for">For sales operations</p>
+              <p class="label">04</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/> <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+              <h3>Is the field force paying off?</h3>
+              <p>Incremental NRx per 100 calls, with its caveat.</p>
+              <p class="for">For commercial effectiveness</p>
+              <p class="label">05</p>
+            </article>
+            <article class="use card">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <h3>One more question?</h3>
+              <p>Ask the agent: every figure comes from a tool.</p>
+              <p class="for">For the whole brand team</p>
+              <p class="label">06</p>
+            </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="use-it" id="use" aria-labelledby="use-title">
+    <div class="wrap">
+      <h2 class="center-title reveal" id="use-title">Run it, or have it built.</h2>
+      <div class="plans">
+        <article class="plan reveal">
+          <div class="plan-head"><h3>Run it yourself</h3><span class="badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="16 18 22 12 16 6"/> <polyline points="8 6 2 12 8 18"/></svg> Open source</span></div>
+          <p class="plan-text">Free under the MIT license. No API key needed: without one, the agent uses an offline mock router.</p>
+          <ol class="cmds">
+            <li>
+              <div class="cmd-head"><p class="cmd-label">Clone</p><button class="copy" type="button" hidden>Copy</button></div>
+              <div class="cmd"><pre><code>git clone https://github.com/faizanreza-cs/pharmapulse.git pharmapulse &amp;&amp; cd pharmapulse</code></pre></div>
+            </li>
+            <li>
+              <div class="cmd-head"><p class="cmd-label">Install and build the data</p><button class="copy" type="button" hidden>Copy</button></div>
+              <div class="cmd"><pre><code>make setup
+make data</code></pre></div>
+            </li>
+            <li>
+              <div class="cmd-head"><p class="cmd-label">Open the dashboard</p><button class="copy" type="button" hidden>Copy</button></div>
+              <div class="cmd"><pre><code>make app</code></pre></div>
+            </li>
+          </ol>
+          <div class="plan-foot"><a class="btn btn-accent btn-block" href="https://github.com/faizanreza-cs/PharmaPulse">View on GitHub <svg class="go" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/></svg></a></div>
+        </article>
+        <article class="plan featured reveal" style="--d:.1s">
+          <div class="plan-head"><h3>Work with me</h3><span class="badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/> <rect width="20" height="14" x="2" y="6" rx="2"/></svg> For teams</span></div>
+          <p class="plan-text">I build analytics and AI agents like this one for pharma commercial teams.</p>
+          <ul class="checks"><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>PharmaPulse&#x27;s analytics on your own Rx, claims and call data</span></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Forecasts, persistence and targeting models</span></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>LLM agents with guardrails, evals and citations</span></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Dashboards and APIs your team can use</span></li></ul>
+          <p class="callout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m11 17 2 2a1 1 0 1 0 3-3"/> <path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/> <path d="m21 3 1 11h-2"/> <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/> <path d="M3 4h8"/></svg> Open to freelance projects and full-time roles.</p>
+          <div class="plan-foot">
+            <a class="btn btn-dark btn-block" href="mailto:faizanreza01@gmail.com?subject=PharmaPulse">Email me <svg class="go" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/></svg></a>
+            <div class="socials">
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/faizanreza"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/> <rect width="4" height="12" x="2" y="9"/> <circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
+              <a class="btn btn-ghost" href="https://x.com/cs_faizan"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg> <span class="sr-only">Follow on</span> X</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 class="center-title reveal" id="faq-title">A few questions</h2>
+      <div class="faq-list">
+        <details class="card reveal" open>
+          <summary>Is any of this real data?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="answer"><p>No. A seeded generator builds a US type 2 diabetes market: 4 brands, 2,000 HCPs, 12,000 patients and 3 years of weekly prescriptions, with promotion, payer access and pharmacy claims.</p></div>
+        </details>
+        <details class="card reveal">
+          <summary>Can the agent make up numbers?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Every figure in an answer comes from a tool. The model never computes or recalls figures; tool outputs carry the exact rows, with the period, definitions and caveats.</p></div>
+        </details>
+        <details class="card reveal">
+          <summary>Which models does it work with?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="answer"><p>The Anthropic API by default, OpenAI as an extra, and an offline mock router that needs no key and runs the whole pipeline in CI.</p></div>
+        </details>
+        <details class="card reveal">
+          <summary>How is the forecast model chosen?<span class="pm" aria-hidden="true"></span></summary>
+          <div class="answer"><p>Seasonal naive, Holt-Winters ETS and gradient boosting compete on a 13-week holdout, and the lowest WAPE wins for each brand.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="cta-panel reveal">
+        <h2 id="cta-title">Want this on your brand&#x27;s data?</h2>
+        <p>I can adapt PharmaPulse to your market, or build the analytics your brand team needs.</p>
+        <div class="cta-actions">
+          <a class="btn btn-white" href="mailto:faizanreza01@gmail.com?subject=PharmaPulse">Email me <svg class="go" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/> <path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="btn btn-line" href="https://github.com/faizanreza-cs/PharmaPulse">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.svg" alt="PharmaPulse" width="140" height="32" loading="lazy">
+        <p>An AI analytics copilot for pharma brand teams.</p>
+      </div>
+      <div>
+        <h2 class="label">Project</h2>
+        <ul>
+          <li><a href="https://github.com/faizanreza-cs/PharmaPulse">Source on GitHub</a></li>
+          <li><a href="https://github.com/faizanreza-cs/PharmaPulse#readme">README</a></li>
+          <li><a href="https://github.com/faizanreza-cs/PharmaPulse/blob/main/LICENSE">License (MIT)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="label">More projects</h2>
+        <ul><li><a href="https://faizanreza-cs.github.io/PDLwatch/">PDLwatch</a></li><li><a href="https://faizanreza-cs.github.io/Shelfsense/">ShelfSense</a></li><li><a href="https://faizanreza-cs.github.io/Retail-Media-Lab/">Retail Media Lab</a></li><li><a href="https://faizanreza-cs.github.io/agentkit-enterprise/">AgentKit Enterprise</a></li><li><a href="https://faizanreza-cs.github.io/Docflow-agent/">DocFlow Agent</a></li><li><a href="https://faizanreza-cs.github.io/Ragdesk/">RAGdesk</a></li><li><a href="https://faizanreza-cs.github.io/Pharma-MCP/">Pharma MCP</a></li></ul>
+      </div>
+      <div>
+        <h2 class="label">Contact</h2>
+        <ul>
+          <li><a href="mailto:faizanreza01@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/faizanreza">LinkedIn</a></li>
+          <li><a href="https://x.com/cs_faizan">X</a></li>
+          <li><a href="https://github.com/faizanreza-cs">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 Faizan Reza</p>
+      <p>Icons: <a href="https://lucide.dev">Lucide</a>. Font: Outfit. <a href="assets/LICENSES.txt">Licenses</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

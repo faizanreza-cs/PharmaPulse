@@ -1,7 +1,6 @@
 <!--
   Profile README for github.com/faizanreza-cs.
   To publish: create a public repo named exactly `faizanreza-cs` and put this file at its root.
-  Replace YOUR-LINKEDIN-ID with your LinkedIn profile id before publishing.
 -->
 
 # Hi, I'm Faizan Reza
@@ -14,8 +13,8 @@ governed LLM agents and automations.
 📍 Delhi, India · 🎓 Computer Science Engineering graduate · 💼 Available for freelance projects and full-time AI engineering roles
 
 [![Email](https://img.shields.io/badge/email-faizanreza01%40gmail.com-blue)](mailto:faizanreza01@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2)](https://www.linkedin.com/in/YOUR-LINKEDIN-ID)
-[![X](https://img.shields.io/badge/X-Follow-000000?logo=x&logoColor=white)](https://x.com/cs_faizan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2)](https://www.linkedin.com/in/faizanreza)
+[![X](https://img.shields.io/badge/Follow-000000?logo=x&logoColor=white)](https://x.com/cs_faizan)
 
 ---
 
@@ -23,7 +22,7 @@ governed LLM agents and automations.
 
 | Project | What it does | Highlights |
 |---|---|---|
-| [**PDLwatch**](https://github.com/faizanreza-cs/pdlwatch) | State Medicaid preferred drug lists, read from PDFs (tables, lists, scans, prose) and tracked over time | 2 wrong of 5,112 auto-accepted rows on held-out states of a 106-PDF test set, every row cited to its page, a review queue for the rest, changes and point-in-time history |
+| [**PDLwatch**](https://github.com/faizanreza-cs/pdlwatch) | State Medicaid preferred drug lists, read from PDFs and Excel lists (tables, lists, scans, prose) and tracked over time | 2 wrong of 5,112 auto-accepted rows on held-out states of a 106-PDF test set; on 28 real PDLs and weekly workbooks from 14 states, 59% of rows auto-accepted and all 60 sampled right; every row cited to its page, changes, history and alerts on watched brands |
 | [**retail-media-lab**](https://github.com/faizanreza-cs/retail-media-lab) | Amazon Ads analytics for a supplements brand: AMC-style SQL, attribution, a geo holdout, a marketing mix model and a budget optimizer | Every method scored against a simulator's truth (geo-test iROAS 2.03 vs true 1.90; budget plan reaches 89% of the best possible) |
 | [**shelfsense**](https://github.com/faizanreza-cs/shelfsense) | Consumer insights for a health and nutrition store: recommender, review aspect sentiment, monitoring | Learned re-ranker that lifts recall 28% over the best single model on 91k real Amazon reviews, LLM labels distilled into a cheap classifier, an alert that caught a simulated reformulation in its first month |
 | [**agentkit-enterprise**](https://github.com/faizanreza-cs/agentkit-enterprise) | Starter kit for AI agents companies can approve for production | Role-based tool policy, human approval with separation of duties, PII redaction, hash-chained audit log, budgets, governance eval |
@@ -62,7 +61,7 @@ Every project ships with tests, CI and Docker; the agent projects also include e
 
 ### 🌱 Currently building
 
-- PDLwatch on real state PDLs: RxNorm drug-name matching, and alerts when a watched brand's coverage changes
+- PDLwatch: more states (managed care formularies next) and a browser-based fetch for states that block scripts
 
 ---
 

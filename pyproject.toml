@@ -71,3 +71,8 @@ addopts = "-q"
 # tool descriptions are long prose strings the model reads
 "pharmapulse/llm/tools.py" = ["E501"]
 "scripts/build_notebooks.py" = ["E501"]
+
+[tool.uv]
+# lifelines holds pandas at 2.3, which predates NumPy 2.5 and sets off its deprecation warnings;
+# NumPy stays below 2.5 until lifelines allows pandas 3.
+constraint-dependencies = ["numpy<2.5"]

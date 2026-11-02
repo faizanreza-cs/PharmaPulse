@@ -9,8 +9,16 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("instrument-serif-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
   --bg: #ffffff;
   --panel: #f7f8fa;
   --raised: #eef0f4;
@@ -105,14 +113,14 @@ code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberat
 section { padding: 96px 0; }
 section + section { border-top: 1px solid var(--line); }
 .sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px 48px; align-items: end; margin-bottom: 40px; }
-.sec-title { font-size: 36px; line-height: 1.15; letter-spacing: -0.01em; }
+.sec-title { font-family: var(--serif); font-weight: 400; font-size: 48px; line-height: 1.05; letter-spacing: -0.005em; }
 .sec-head p { max-width: 32rem; }
 
 /* Hero: the question, and the answer the product gives */
 .hero { padding: 72px 0 88px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 64px; align-items: center; }
 .eyebrow { font-size: 15px; color: var(--a-ink); font-weight: 500; margin-bottom: 16px; }
-.hero-title { font-size: clamp(44px, 6vw, 72px); line-height: 1.02; letter-spacing: -0.025em; }
+.hero-title { font-family: var(--serif); font-weight: 400; font-size: clamp(56px, 7.4vw, 104px); line-height: 0.98; letter-spacing: -0.015em; }
 .hero-sub { font-size: 21px; line-height: 1.5; color: var(--body); margin-top: 20px; max-width: 26rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
@@ -132,9 +140,16 @@ section + section { border-top: 1px solid var(--line); }
 .sources span { color: var(--muted); }
 .answer figcaption { margin-top: 14px; font-size: 13px; line-height: 20px; color: var(--muted); }
 
+/* Hero visual: a real pharmacy, with the answer laid over it */
+.hero-visual { position: relative; padding: 0 0 40px 72px; }
+.hero-photo { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 80%; border-radius: var(--r-panel); }
+.hero-visual .answer { position: absolute; left: 0; bottom: 0; width: min(400px, 80%); background: rgba(255, 255, 255, 0.97); box-shadow: 0 24px 48px -24px rgba(17, 24, 39, 0.35); }
+
 /* Overview: the problem in plain words */
-.overview { padding: 80px 0; background: var(--panel); }
-.overview-text { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.5; color: var(--ink); max-width: 46rem; }
+.overview { padding: 96px 0; background: var(--panel); }
+.overview-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; align-items: center; }
+.overview-photo { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r-panel); }
+.overview-text { font-family: var(--serif); font-size: clamp(26px, 3vw, 38px); line-height: 1.25; color: var(--ink); }
 
 /* How it works: five steps in one row */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; }
@@ -159,7 +174,7 @@ section + section { border-top: 1px solid var(--line); }
 .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .metric { padding: 28px 32px 28px 0; }
 .metric + .metric { padding-left: 32px; border-left: 1px solid var(--line); }
-.metric b { display: block; font-size: 44px; line-height: 1.1; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.metric b { display: block; font-family: var(--serif); font-weight: 400; font-size: 64px; line-height: 1; font-variant-numeric: tabular-nums; }
 .metric p { margin-top: 10px; font-size: 15px; line-height: 1.55; }
 .shot { margin-top: 48px; }
 .shot img { width: 100%; height: auto; border-radius: var(--r-card); border: 1px solid var(--line); }
@@ -214,8 +229,9 @@ details[open] .pm::after { transform: rotate(0deg); }
 
 /* CTA: the one dark block on the page */
 .cta { padding-top: 0; border-top: 0; }
-.cta-panel { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 40px; border-radius: var(--r-panel); background: var(--ink); }
-.cta-panel h2 { color: #fff; font-size: 30px; line-height: 1.2; }
+.cta-panel { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 64px 56px; border-radius: var(--r-panel); background: var(--ink); }
+.cta-photo { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; opacity: 0.32; filter: grayscale(0.3); }
+.cta-panel h2 { color: #fff; font-family: var(--serif); font-weight: 400; font-size: 52px; line-height: 1.05; }
 .cta-panel p { color: #c9ced8; margin-top: 8px; max-width: 34rem; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
@@ -233,6 +249,10 @@ details[open] .pm::after { transform: rotate(0deg); }
 /* Small screens */
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { padding: 0; }
+  .hero-visual .answer { position: relative; width: auto; margin: -64px 16px 0; }
+  .overview-grid { grid-template-columns: 1fr; gap: 32px; }
+  .overview-photo { aspect-ratio: 16 / 10; }
   .steps { grid-template-columns: 1fr; }
   .steps li { border-left: 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 40px 1fr; column-gap: 16px; padding: 20px; }
   .steps li:first-child { border-top: 0; }
@@ -246,7 +266,9 @@ details[open] .pm::after { transform: rotate(0deg); }
   .nav-inner .btn { margin-left: auto; }
   section { padding: 64px 0; }
   .sec-head { grid-template-columns: 1fr; margin-bottom: 28px; }
-  .sec-title { font-size: 30px; }
+  .sec-title { font-size: 38px; }
+  .cta-panel h2 { font-size: 38px; }
+  .metric b { font-size: 52px; }
   .feature-list { grid-template-columns: 1fr; }
   .feature, .feature:nth-child(even) { padding: 20px 0; border-left: 0; }
   .metrics { grid-template-columns: 1fr; }
@@ -260,6 +282,7 @@ details[open] .pm::after { transform: rotate(0deg); }
   .hero { padding: 48px 0 64px; }
   .hero-sub { font-size: 19px; }
   .answer { padding: 16px; }
+  .hero-visual .answer { margin: -40px 8px 0; }
   .answer-q { max-width: 90%; }
   .answer-a { padding: 16px; }
   .answer-a > p { font-size: 17px; }

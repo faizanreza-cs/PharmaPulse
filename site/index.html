@@ -23,6 +23,8 @@
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/touch-icon.png">
 <link rel="preload" href="assets/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/pharmacy.webp" as="image">
 <link rel="stylesheet" href="assets/styles.css">
 <style>:root{--a:#B4235A;--a-50:#FCF0F3;--a-100:#F8E2E6;--a-200:#EFC1CA;--a-400:#CF6985;--pop-1:#F59E0B;--pop-2:#6366F1;--a-ink:#B4235A}</style>
 <script src="assets/app.js" defer></script>
@@ -49,6 +51,8 @@
           <a class="btn btn-line" href="#results">See the results</a>
         </div>
       </div>
+      <div class="hero-visual">
+        <img class="hero-photo" src="assets/pharmacy.webp" alt="" width="1600" height="1068" fetchpriority="high" decoding="async">
       <figure class="answer" aria-label="An example answer from the PharmaPulse agent">
         <div class="answer-q"><span class="who">Brand director</span><p>Are we gaining share?</p></div>
         <div class="answer-a">
@@ -61,11 +65,12 @@
         </div>
         <figcaption>An example on synthetic data. The figures are the ones on the dashboard below; every figure the agent gives comes from a tool.</figcaption>
       </figure>
+      </div>
     </div>
   </section>
 
   <section class="overview" id="overview" aria-label="Overview">
-    <div class="wrap"><p class="overview-text">A brand director asks the same questions every quarter. Are we gaining share? What will TRx look like next quarter? Why are patients dropping off? Which prescribers should reps call next? PharmaPulse answers them with tested analytics, and with an LLM agent that calls the same analytics and cites every figure.</p></div>
+    <div class="wrap overview-grid"><img class="overview-photo" src="assets/blisters.webp" alt="Blister packs of tablets on a blue surface" width="1400" height="979" loading="lazy" decoding="async"><p class="overview-text">A brand director asks the same questions every quarter. Are we gaining share? What will TRx look like next quarter? Why are patients dropping off? Which prescribers should reps call next? PharmaPulse answers them with tested analytics, and with an LLM agent that calls the same analytics and cites every figure.</p></div>
   </section>
 
   <section class="how" id="how" aria-labelledby="how-title">
@@ -208,7 +213,7 @@ make data</code></pre></div>
 
   <section class="cta" aria-labelledby="cta-title">
     <div class="wrap">
-      <div class="cta-panel">
+      <div class="cta-panel"><img class="cta-photo" src="assets/flatlay.webp" alt="" width="1800" height="1189" loading="lazy" decoding="async">
         <div>
           <h2 id="cta-title">Want this on your brand&#x27;s data?</h2>
           <p>I can adapt PharmaPulse to your market, or build the analytics your brand team needs.</p>
@@ -252,7 +257,7 @@ make data</code></pre></div>
     </div>
     <div class="foot-base">
       <p>© 2026 Faizan Reza</p>
-      <p>Icons: <a href="https://lucide.dev">Lucide</a>. Font: Outfit. <a href="assets/LICENSES.txt">Licenses</a></p>
+      <p>Icons: <a href="https://lucide.dev">Lucide</a>. Fonts: Outfit, Instrument Serif. Photos: <a href="https://unsplash.com/license">Unsplash</a>. <a href="assets/LICENSES.txt">Licenses</a></p>
     </div>
   </div>
 </footer>

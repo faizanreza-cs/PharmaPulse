@@ -118,3 +118,15 @@ INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL
 DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
+
+
+Font: Instrument Serif (https://github.com/Instrument/instrument-serif)
+---------------------------------
+SIL Open Font License 1.1. Copyright 2022 The Instrument Serif Project Authors.
+
+Photos: Unsplash (https://unsplash.com/license)
+---------------------------------
+pharmacy.webp  https://images.unsplash.com/photo-1576602976047-174e57a47881
+blisters.webp  https://images.unsplash.com/photo-1584308666744-24d5c474f2ae
+flatlay.webp   https://images.unsplash.com/photo-1631549916768-4119b2e5f926
+Free to use under the Unsplash License. Resized and converted to WebP.
